@@ -1,0 +1,13 @@
+p {
+  font-weight: 500;
+}
+#time {
+  font-weight: 800;
+}
+#shape {
+  position: absolute;
+}
+#area {
+  height: 450px;
+  width: 1000px;
+}
