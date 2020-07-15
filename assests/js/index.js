@@ -1,3 +1,7 @@
+// TODO: add the start button functionality
+// TODO: add number of rounds
+// TODO: add multiplayer and leaderboard
+
 gameStart();
 
 function gameStart() {
@@ -22,33 +26,29 @@ function colorGenerator() {
 }
 
 function shapeGenerator() {
-  var shapeSelector = Math.floor(Math.random() * 3);
   var top = Math.floor(Math.random() * 200 + 50);
   var left = Math.floor(Math.random() * 500 + 100);
   var sizeHeight = Math.floor(Math.random() * 200 + 50);
   var sizeWidth = Math.floor(Math.random() * 300 + 50);
   var color = colorGenerator();
 
-  document.getElementById("shape").style.display = "block";
-  if (shapeSelector == 0) {
-    document.getElementById("shape").style.margin = top + "px " + left + "px";
-    document.getElementById("shape").style.height = sizeHeight + "px";
-    document.getElementById("shape").style.width = sizeHeight + "px";
-    document.getElementById("shape").style.backgroundColor = color;
+  if (Math.random() > 0.5) {
     document.getElementById("shape").style.borderRadius = 50 + "%";
-  } else if (shapeSelector == 1) {
-    document.getElementById("shape").style.margin = top + "px " + left + "px";
     document.getElementById("shape").style.height = sizeHeight + "px";
     document.getElementById("shape").style.width = sizeHeight + "px";
-    document.getElementById("shape").style.backgroundColor = color;
-    document.getElementById("shape").style.borderRadius = 0 + "%";
   } else {
-    document.getElementById("shape").style.margin = top + "px " + left + "px";
-    document.getElementById("shape").style.height = sizeHeight + "px";
-    document.getElementById("shape").style.width = sizeWidth + "px";
-    document.getElementById("shape").style.backgroundColor = color;
     document.getElementById("shape").style.borderRadius = 0 + "%";
+    if (Math.random() > 0.5) {
+      document.getElementById("shape").style.height = sizeHeight + "px";
+      document.getElementById("shape").style.width = sizeHeight + "px";
+    } else {
+      document.getElementById("shape").style.height = sizeHeight + "px";
+      document.getElementById("shape").style.width = sizeWidth + "px";
+    }
   }
+  document.getElementById("shape").style.margin = top + "px " + left + "px";
+  document.getElementById("shape").style.display = "block";
+  document.getElementById("shape").style.backgroundColor = color;
 }
 
 function Delay() {
